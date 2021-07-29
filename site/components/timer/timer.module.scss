@@ -1,0 +1,18 @@
+.countdownTimer {
+	color: var.$darkpurple;
+	font-size: 6em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 20px;
+	list-style-type: none;
+
+	li {
+		margin: 20px;
+	}
+}
