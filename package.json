@@ -2,10 +2,10 @@
   "name": "focus-timer",
   "version": "1.0.0",
   "description": "",
-  "main": "site/index.html",
+  "main": "dist/index.html",
   "scripts": {
     "start": "parcel site/index.html",
-    "build": "parcel build site/index.html --dist-dir dist",
+    "build": "parcel build site/index.html",
     "clean": "rm -rf dist .parcel-cache"
   },
   "repository": {
