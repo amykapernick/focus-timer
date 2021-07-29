@@ -1,0 +1,44 @@
+.block {
+	margin: 0;
+	padding: 10px 30px;
+	opacity: 0.4;
+	color: var.$neutral;
+
+	&[data-current] {
+		opacity: 1;
+		background: var.$purple;
+		color: var.$white;
+	}
+
+	p {
+		margin: 10px 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.scheduleContainer {
+	flex-grow: 0;
+	min-width: 300px;
+	margin-left: 20px;
+	padding: 20px 0;
+	background: var.$purple_light_10;
+
+	h2 {
+		margin: 0;
+		color: var.$purple_dark_75;
+		text-align: center;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}

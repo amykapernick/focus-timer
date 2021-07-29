@@ -76,7 +76,7 @@ const Timer = () => {
 	
 
 	return (
-		<Fragment>
+		<div>
 			<div  className={countdownTimer}>
 				{timer > 0 
 						? <p>{formatTimer(timer)}</p>
@@ -106,7 +106,7 @@ const Timer = () => {
 					</Fragment>
 				}
 			</ul>
-		</Fragment>
+		</div>
 	)
 }
 
