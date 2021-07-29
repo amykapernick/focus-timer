@@ -5,7 +5,8 @@
   "main": "site/index.html",
   "scripts": {
     "start": "parcel site/index.html",
-    "build": "parcel build site/index.html"
+    "build": "parcel build site/index.html --dist-dir dist",
+    "clean": "rm -rf dist .parcel-cache"
   },
   "repository": {
     "type": "git",
