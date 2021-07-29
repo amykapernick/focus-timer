@@ -2,7 +2,7 @@
   "name": "focus-timer",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "site/index.html",
   "scripts": {
     "start": "parcel site/index.html",
     "build": "parcel build site/index.html"
