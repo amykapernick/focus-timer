@@ -1,18 +1,68 @@
 .countdownTimer {
 	color: var.$darkpurple;
-	font-size: 6em;
+	font-size: 3em;
 	font-weight: bold;
 	text-align: center;
+	padding: 50px 0;
+	
+	animation-duration: 2s;
+	animation-iteration-count: 135;
+	animation-timing-function: steps(1, end);
+
+	&[data-state] {
+		animation-name: flashBackground;
+	}
+
+	&[data-state='warning'] {
+		--background: #{var.$orange};
+		color: var.$neutral;
+	}
+
+	&[data-state='end'] {
+		--background: #{var.$red};
+		color: var.$neutral;
+	}
+
+	p {
+		margin: 0;
+	}
 }
+
+@keyframes flashBackground {
+	0% {
+	  background: var(--background);
+	}
+  
+	50% {
+		background: none;
+	}
+  }
 
 .buttons {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	width: 100%;
-	margin: 20px;
+	max-width: calc(100% + 40px);
+	margin: 20px -20px;
+	padding: 0;
 	list-style-type: none;
 
 	li {
 		margin: 20px;
+	}
+
+	button {
+		margin: 0;
+	}
+}
+
+.container {
+	flex-grow: 1;
+	padding: 20px;
+}
+
+@media(min-width: 50em) {
+	.countdownTimer {
+		font-size: 5em;
 	}
 }

@@ -5,14 +5,15 @@ import Button from '../parts/button'
 
 import { timer as defaults } from '../../../_data/defaults'
 
-import {countdownTimer, buttons} from './timer.module.scss'
+import {countdownTimer, buttons, container} from './timer.module.scss'
 
 const Timer = () => {
 	const [working, toggleWorking] = useState(false)
 	const [shortBreak, toggleShortBreak] = useState(false)
 	const [longBreak, toggleLongBreak] = useState(false)
-	const [timer, setTimer] = useState(0)
+	const [timer, setTimer] = useState(false)
 	const [currentState, setCurrentState] = useState('work')
+	const [timerState, setTimerState] = useState(false)
 	let countdown
 	const stopTimer = () => {
 		clearTimeout(countdown)
@@ -67,8 +68,14 @@ const Timer = () => {
 			countdown = setTimeout(() => {
 				setTimer(timer - 1)
 			}, 1000)
+
+			if(timer < 60) {
+				setTimerState('warning')
+			}
+			
 		}
 		else if(timer === 0) {
+			setTimerState('end')
 			stopTimer()
 			setTimer(0)
 		}
@@ -76,8 +83,8 @@ const Timer = () => {
 	
 
 	return (
-		<div>
-			<div  className={countdownTimer}>
+		<div className={container}>
+			<div data-state={timerState} className={countdownTimer}>
 				{timer > 0 
 						? <p>{formatTimer(timer)}</p>
 						: <p>Time's Up!</p>
@@ -87,7 +94,7 @@ const Timer = () => {
 				{currentState == 'work' 
 					&& <li>
 						<Button onClick={() => startTimer('work')}>
-						<span>{working ? 'Pause' : 'Start'} Work</span>
+						<span>{working ? 'Stop' : 'Start'} Work</span>
 					</Button>
 					</li>
 				}
@@ -95,12 +102,12 @@ const Timer = () => {
 					&& <Fragment>
 						<li>
 						<Button onClick={() => startTimer('shortBreak')}>
-							<span>{working ? 'Pause' : 'Start'} Break</span>
+							<span>{shortBreak ? 'Stop' : 'Start'} Break</span>
 						</Button>
 						</li>
 						<li>
 						<Button onClick={() => startTimer('longBreak')}>
-							<span>{working ? 'Pause' : 'Start'} Long Break</span>
+							<span>{longBreak ? 'Stop' : 'Start'} Long Break</span>
 						</Button>
 						</li>
 					</Fragment>

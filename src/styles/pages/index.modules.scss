@@ -1,5 +1,6 @@
 .page {
 	display: flex;
 	justify-content: space-between;
-	padding: 20px 50px;
+	min-height: 100vh;
+	padding: 0;
 }
