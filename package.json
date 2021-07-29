@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel site/index.html",
-    "build": "parcel site/index.html"
+    "build": "parcel build site/index.html"
   },
   "repository": {
     "type": "git",
