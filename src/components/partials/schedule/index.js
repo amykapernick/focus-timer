@@ -69,15 +69,15 @@ const Schedule = () => {
 		genTime = addMinutes(genTime, 15);
 	} while (isBefore(genTime, endTime) || isEqual(genTime, endTime));
 
-	useEffect(() => {
-		setSlot(new Date());
-		const interval = setInterval(() => {
-			document.querySelector(`#current`).scrollIntoView({ behavior: `smooth`, block: `center` });
-			setSlot(new Date());
-		}, 1000 * 60);
+	// useEffect(() => {
+	// 	setSlot(new Date());
+	// 	const interval = setInterval(() => {
+	// 		document.querySelector(`#current`).scrollIntoView({ behavior: `smooth`, block: `center` });
+	// 		setSlot(new Date());
+	// 	}, 1000 * 60);
 
-		return () => clearInterval(interval);
-	}, []);
+	// 	return () => clearInterval(interval);
+	// }, []);
 
 	return (
 		<ul className={styles.schedule} data-active={!!currentSlot}>

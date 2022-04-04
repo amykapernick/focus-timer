@@ -66,14 +66,16 @@
 		align-items: center;
 		justify-content: center;
 		background: var.$pink;
-		color: var.$white;
+		color: var.$neutral;
 
 		&.personal {
 			background: var.$darkpurple;
+			color: var.$white;
 		}
 
 		&.aimhigher {
 			background: var.$aimhigher_primary;
+			color: var.$white;
 		}
 
 		&.work {
@@ -82,12 +84,10 @@
 
 		&.ddd {
 			background: var.$orange;
-			color: var.$neutral;
 		}
 
 		&.makerx {
 			background: var.$yellow;
-			color: var.$neutral;
 		}
 
 		&.overflow {
