@@ -1,22 +1,26 @@
-import React, {Fragment} from "react";
-import ReactDom from "react-dom";
+import React, { Fragment } from "react";
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import DevStyles from './components/partials/devStyles'
+import DevStyles from './components/partials/devStyles';
 
-import IndexPage from './pages'
+import IndexPage from './pages';
+import SchedulePage from "./pages/schedule";
 
-import './styles/main.scss'
+import './styles/main.scss';
 
-
-const App = () => {
-	return (
-		<Fragment>
-			{process.env.NODE_ENV === `development`
+const App = () => (
+	<Fragment>
+		{process.env.NODE_ENV === `development`
 				&& <DevStyles />
-			}
-			<IndexPage />
-		</Fragment>
-	)
-};
+		}
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<IndexPage />} />
+				<Route path="/schedule" element={<SchedulePage />} />
+			</Routes>
+		</BrowserRouter>
+	</Fragment>
+);
 
-ReactDom.render(<App />, document.getElementById("app"));
+createRoot(document.querySelector(`#app`)).render(<App />);

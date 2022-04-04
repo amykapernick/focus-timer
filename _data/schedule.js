@@ -60,7 +60,7 @@ const monday = [
 	},
 	{
 		start: '5:15p',
-		end: '6:00p',
+		end: '6:15p',
 		label: 'Overflow',
 		type: 'overflow'
 	}
@@ -133,7 +133,7 @@ const tuesday = [
 	},
 	{
 		start: '5:15p',
-		end: '6:00p',
+		end: '6:15p',
 		label: 'Overflow',
 		type: 'overflow'
 	}
@@ -206,7 +206,7 @@ const wednesday = [
 	},
 	{
 		start: '5:15p',
-		end: '6:00p',
+		end: '6:15p',
 		label: 'Overflow',
 		type: 'overflow'
 	}
@@ -279,7 +279,7 @@ const thursday = [
 	},
 	{
 		start: '5:15p',
-		end: '6:00p',
+		end: '6:15p',
 		label: 'Overflow',
 		type: 'overflow'
 	}
@@ -352,18 +352,16 @@ const friday = [
 	},
 	{
 		start: '5:15p',
-		end: '6:00p',
+		end: '6:15p',
 		label: 'Overflow',
 		type: 'overflow'
 	}
 ]
 
-module.exports = [
-	null,
+module.exports = {
 	monday,
 	tuesday,
 	wednesday,
 	thursday,
-	friday,
-	null
-]
+	friday
+}

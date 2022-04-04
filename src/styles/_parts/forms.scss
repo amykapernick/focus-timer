@@ -1,4 +1,4 @@
-@use '../variables.scss' as var;
+@use '../variables.scss'as var;
 
 form {
 	display: flex;
@@ -19,7 +19,8 @@ form {
 	}
 }
 
-label, legend {
+label,
+legend {
 	display: block;
 	min-width: 100px;
 	margin: 40px 0 16px;
@@ -44,13 +45,15 @@ legend {
 	width: 100%;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
 	display: block;
 	flex: 1 1 100%;
 	margin: 0;
 	padding: 5px 25px;
-	border: 2px solid var.$darkpurple_light_50;
-	background: var.$darkpurple_light_50;
+	border: 2px solid rgba(var.$darkpurple, 0.5);
+	background: rgba(var.$darkpurple, 0.5);
 	color: var.$neutral;
 	font-size: 1em;
 
@@ -79,13 +82,14 @@ input, textarea, select {
 		}
 	}
 
-	&[type='checkbox'], &[type='radio'] {
+	&[type='checkbox'],
+	&[type='radio'] {
 		position: absolute;
 		z-index: -100;
 		opacity: 0;
 
 		&:checked {
-			+ label {
+			+label {
 				&:after {
 					content: '';
 				}
@@ -93,12 +97,12 @@ input, textarea, select {
 		}
 
 		&:focus {
-			+ label {
+			+label {
 				outline: 3px solid var.$yellow;
 			}
 		}
 
-		& + label {
+		&+label {
 			display: flex;
 			position: relative;
 			align-items: center;
@@ -109,7 +113,8 @@ input, textarea, select {
 			text-transform: none;
 			cursor: pointer;
 
-			&:before, &:after {
+			&:before,
+			&:after {
 				display: block;
 				flex: 0 0 auto;
 			}
@@ -147,7 +152,7 @@ input, textarea, select {
 
 	&[type='checkbox'] {
 		&:checked {
-			+ label {
+			+label {
 				&:after {
 					content: '✓';
 				}
@@ -156,8 +161,9 @@ input, textarea, select {
 	}
 
 	&[type='radio'] {
-		& + label {
-			&:before, &:after {
+		&+label {
+			&:before,
+			&:after {
 				border-radius: 50%;
 			}
 
@@ -191,7 +197,7 @@ fieldset {
 	padding: 0;
 	border: none;
 
-	> div {
+	>div {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -10px -26px;
@@ -203,7 +209,7 @@ fieldset {
 	}
 
 	@media(min-width: 40em) {
-		> div {
+		>div {
 			label {
 				flex-basis: auto;
 				flex-grow: 0;
@@ -214,8 +220,9 @@ fieldset {
 				}
 			}
 
-			input[type='radio'], input[type='checkbox'] {
-				+ label {
+			input[type='radio'],
+			input[type='checkbox'] {
+				+label {
 					width: auto;
 				}
 			}

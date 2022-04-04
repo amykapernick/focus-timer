@@ -1,0 +1,107 @@
+.schedule {
+	display: grid;
+	grid-template-columns: auto repeat(5, 1fr);
+	margin: 0;
+	padding: 0;
+	border: 1px solid var.$neutral;
+	list-style: none;
+
+	ul,
+	li {
+		margin: 0;
+		list-style: none;
+	}
+
+	ul {
+		display: grid;
+		grid-auto-rows: 30px;
+		padding: 0;
+
+		li {
+			border-top: 1px solid var.$neutral;
+		}
+	}
+
+	&[data-active='true'] {
+		.slots {
+			li {
+				opacity: 0.3;
+
+				&[data-current='true'] {
+					opacity: 1;
+				}
+			}
+
+			.marker {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.column {
+	&:not(:last-child) {
+		border-right: 1px solid var.$neutral;
+	}
+}
+
+.title {
+	margin: 0;
+	font-weight: 700;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.times {
+	text-align: right;
+}
+
+.slots {
+	text-align: center;
+
+	li {
+		display: flex;
+		grid-column: 1;
+		grid-row: var(--row_start) / span var(--rows);
+		align-items: center;
+		justify-content: center;
+		background: var.$pink;
+		color: var.$white;
+
+		&.personal {
+			background: var.$darkpurple;
+		}
+
+		&.aimhigher {
+			background: var.$aimhigher_primary;
+		}
+
+		&.work {
+			background: var.$aimhigher_secondary;
+		}
+
+		&.ddd {
+			background: var.$orange;
+			color: var.$neutral;
+		}
+
+		&.makerx {
+			background: var.$yellow;
+			color: var.$neutral;
+		}
+
+		&.overflow {
+			background: var.$green;
+		}
+	}
+
+	.marker {
+		position: relative;
+		z-index: 1;
+		border: 5px solid var.$navy;
+		opacity: 1;
+		background: rgba(var.$background, 0.4);
+		color: transparent;
+		font-size: 0;
+	}
+}
